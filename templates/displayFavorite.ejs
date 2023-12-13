@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Favorite Book Data</title>
+	<link rel="stylesheet" href="final.css" type="text/css">
+</head>
+
+<body class="lavenderBackground">
+	<h1 class="favoriteText">Favorite Book Data &#128151</h1>
+
+    <div id="displayFavorite">
+	<p><strong>Name:</strong> <%- name %></p>
+    <p><strong>Email Address:</strong> <%- email %></p>
+    <p><strong>Book Title:</strong> <%- title %></p>
+	<p><strong>Book Author:</strong> <%- author %></p> 
+	<p><strong>Publish Year:</strong> <%- year %></p>
+    </div>
+    <hr>
+    Task completed at <span id="time"></span>
+    <script>
+        let str = new Date().toString();
+        document.querySelector("#time").innerHTML = str;
+    </script>
+    <br>
+    <br>
+	<button class="button" onClick="location.href='/home';">&lt Home</button>
+	
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Setting Favorite</title>
+	<link rel="stylesheet" href="final.css" type="text/css">
+</head>
+
+<body class="beigeBackground">
+	<h1>Setting Favorite Book &#128218</h1>
+
+	<script>
+        function confirmCreation() {
+            // console.log("In confirmDeletion");
+
+            let text = "Are you sure you want to submit your favorite selection?\n";
+			text += "Currently this application doesn't support multiple favorites.\n";
+            return confirm(text);
+                // window.location.href = `http://localhost:${location.port}/processApplication`;
+        }
+
+    </script>
+
+	<div id="setFavorite">
+	<div id="centered-container">
+    <form onsubmit="return confirmCreation(this)" action=<%- address %> method="post">
+		<label class="bold inc">Name: </label><input type='text' id='name' name='name' required autofocus>
+		<label class="bold inc"> Email Address: </label><input type='text' id='email' name='email' required>
+		<br>
+		<br>
+		<label class="bold inc">Book title: </label><input type='text' id='book' name='book' required>
+        <br>
+		<br>
+		<fieldset class="rounded">
+        <input type="reset" id="reset" class="button" name="reset" value="Reset"> 
+        <input type="submit" id="submit" class="button" name="submit" value="Submit Favorite">
+		</fieldset>
+    </form>
+	</div>
+	</div>
+    
+	<hr>
+	<button class="button" onClick="location.href='/home';">&lt Home</button>
+	<!-- <a href="/home">HOME</a> -->
+</body>
+
+</html>

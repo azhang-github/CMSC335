@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Remove Favorites</title>
+    <link rel="stylesheet" href="final.css" type="text/css">
+</head>
+
+<body class="beigeBackground">
+    <h1 class="maroon">Removing All Favorites</h1>
+    <script>
+        function confirmDeletion() {
+            // console.log("In confirmDeletion");
+
+            let text = "Are you sure you want to remove all favorites?";
+            if (confirm(text) === true) {
+                console.log("true");
+                window.location.href = `http://localhost:${location.port}/processFavRemove`;
+            }
+        }
+
+    </script>
+
+    <div id="centered-container">
+    <button class="button" id="deleteButton" onclick="confirmDeletion()">Remove all favorites</button>
+    </div>
+    <br>
+    <hr>
+	<button class="button" onClick="location.href='/home';">&lt Home</button>
+
+</body>
+
+</html>

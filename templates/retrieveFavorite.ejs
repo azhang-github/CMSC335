@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Retrieve Favorite</title>
+	<link rel="stylesheet" href="final.css" type="text/css">
+</head>
+
+<body class="greyBackground">
+	<h1>Retrieve Favorite</h1>
+	<div id="getFavorite">
+	<div id="centered-container">
+	<form action=<%- address %> method="post">
+
+		<label class="bold inc">Email Address: </label><input type='text' id='email' name='email' required>
+       
+        <fieldset class="rounded">
+			<input type="reset" id="reset" class="button" name="reset" value="Reset"> 
+			<input type="submit" id="submit" class="button" name="submit" value="Submit Favorite">
+		</fieldset>
+	</form>
+	</div>
+	</div>
+
+	<hr>
+	<button class="button" onClick="location.href='/home';">&lt Home</button>
+	<!-- <a href="/home">HOME</a> -->
+
+</body>
+
+</html>
