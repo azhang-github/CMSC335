@@ -36,7 +36,8 @@ process.stdin.on("readable", function () {
 });
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = `mongodb+srv://${userName}:${password}@cluster0.abqjceg.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${userName}:${password}@cluster0.quopgmb.mongodb.net/?retryWrites=true&w=majority`;
+//const uri = `mongodb+srv://${userName}:${password}@cluster0.abqjceg.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
 
