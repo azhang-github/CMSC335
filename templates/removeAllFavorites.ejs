@@ -16,7 +16,10 @@
             let text = "Are you sure you want to remove all favorites?";
             if (confirm(text) === true) {
                 console.log("true");
-                window.location.href = `http://localhost:${location.port}/processFavRemove`;
+                // let host = window.location.host;
+                // console.log(<%- address %>);
+                let url = <%= address %>;
+                window.location.href = `${url}`;
             }
         }
 

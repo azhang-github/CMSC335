@@ -52,21 +52,21 @@ app.get("/home", (req, res) => {
 
 app.get("/listOfBooks", (req, res) => {
     const variables = {
-        address: `http://localhost:${portNumber}/listOfBooks`,
+        address: `http://${req.hostname}:${portNumber}/listOfBooks`,
     };
     res.render("listOfBooks", variables);
 });
 
 app.get("/page2", (req, res) => {
     const variables = {
-        address: `http://localhost:${portNumber}/page2`,
+        address: `http://${req.hostname}:${portNumber}/page2`,
     };
     res.render("page2", variables);
 });
 
 app.get("/setFavorite", (req, res) => {
     const variables = {
-        address: `http://localhost:${portNumber}/processSetFavorite`,
+        address: `http://${req.hostname}:${portNumber}/processSetFavorite`,
     };
     res.render("setFavorite", variables);
 });
@@ -79,7 +79,7 @@ app.get("/bookNotFound", (req, res) => {
 
 app.get("/retrieveFavorite", (req, res) => {
     const variables = {
-        address: `http://localhost:${portNumber}/processRetrieveFavorite`,
+        address: `http://${req.hostname}:${portNumber}/processRetrieveFavorite`,
     };
     res.render("retrieveFavorite", variables);
 });
@@ -251,7 +251,12 @@ app.get("/processFavRemove", (request, response) => {
 
 app.get("/removeAllFavorites", (request, response) => {
 
-    const variables = {};
+    // const variables = { 
+    //     host: request?.hostname ?? "localhost",
+    // };
+    const variables = {
+        address: `http://${request.hostname}:${portNumber}/processFavRemove`,
+    };
     response.render("removeAllFavorites", variables);
 });
 
