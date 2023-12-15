@@ -90,7 +90,7 @@ app.post("/listOfBooks", async (req, res) => {
     
     booksTable = "";
         
-    fetch("http://openlibrary.org/search.json?q=" + req.body.book)
+    fetch("https://openlibrary.org/search.json?q=" + req.body.book)
   .then(response => response.json())
   .then(jsonStuff => {
     
@@ -168,9 +168,9 @@ app.post("/processSetFavorite", async (req, res) => {
     let name = req.body.name;
     let title = req.body.book?.replaceAll(' ', '+');
     // console.log("In processSetFavorite ");
-    // console.log("http://openlibrary.org/search.json?q="+title);
+    // console.log("https://openlibrary.org/search.json?q="+title);
 
-    const fetchPromise = fetch("http://openlibrary.org/search.json?q="+title)
+    const fetchPromise = fetch("https://openlibrary.org/search.json?q="+title)
         .then(a =>a.json())
         .then(response => {
             if (response.num_found > 0) {
