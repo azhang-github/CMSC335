@@ -255,9 +255,26 @@ app.get("/removeAllFavorites", (request, response) => {
     //     host: request?.hostname ?? "localhost",
     // };
     const variables = {
-        address: `http://${request.hostname}:${portNumber}/processFavRemove`,
+        address: `http://${request.hostname}:${portNumber}/removeAllFavorites`,
     };
     response.render("removeAllFavorites", variables);
+});
+
+app.post("/removeAllFavorites", async (req, res) => {
+    try {
+        await client.connect();
+        const result = await client.db(databaseAndCollection.db)
+        .collection(databaseAndCollection.collection)
+        .deleteMany({});
+        const variables = {
+            deletedCount: result.deletedCount
+        };
+        res.render("processFavRemove", variables)
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
 });
 
 
