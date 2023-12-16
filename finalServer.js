@@ -259,7 +259,7 @@ app.get("/removeAllFavorites", (request, response) => {
     // const variables = { 
     //     host: request?.hostname ?? "localhost",
     // };
-    console.log(`protocol is ${req.protocol}`);
+    console.log(`protocol is ${request.protocol}`);
     const variables = {
         address: `${request.protocol}://${request.hostname}:${portNumber}/removeAllFavorites`,
     };
