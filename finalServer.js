@@ -13,6 +13,7 @@ console.log(`To access server: http://localhost:${portNumber}`);
 app.set("views", path.resolve(__dirname, "templates"));
 
 app.use(express.static(__dirname + '/'));
+app.enable('trust proxy');
 
 const userName = process.env.MONGO_DB_USERNAME;
 const password = process.env.MONGO_DB_PASSWORD;
