@@ -54,7 +54,7 @@ app.get("/listOfBooks", (req, res) => {
     // const protocol = req.protocol;
     console.log(`protocol is ${req.protocol}`);
     const variables = {
-        address: `${req.protocol}://${req.hostname}:${portNumber}/listOfBooks`,
+        address: `https://${req.hostname}:${portNumber}/listOfBooks`,
     };
     res.render("listOfBooks", variables);
 });
