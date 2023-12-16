@@ -9,7 +9,7 @@ require("dotenv").config({ path: path.resolve(__dirname, 'credentialsDontPost/.e
 
 app.set("view engine","ejs");
 app.listen(portNumber);
-console.log(`To access server: http://localhost:${portNumber}`);
+console.log(`To access server locally: http://localhost:${portNumber}`);
 app.set("views", path.resolve(__dirname, "templates"));
 
 app.use(express.static(__dirname + '/'));
@@ -53,7 +53,7 @@ app.get("/home", (req, res) => {
 
 app.get("/listOfBooks", (req, res) => {
     // const protocol = req.protocol;
-    console.log(`protocol is ${req.protocol}`);
+    // console.log(`protocol is ${req.protocol}`);
     const addr = req.secure ? `${req.protocol}://${req.hostname}/listOfBooks`: `${req.protocol}://${req.hostname}:${portNumber}/listOfBooks`;
     const variables = {
         address: addr,
@@ -62,7 +62,7 @@ app.get("/listOfBooks", (req, res) => {
 });
 
 app.get("/page2", (req, res) => {
-    console.log(`protocol is ${req.protocol}`);
+    // console.log(`protocol is ${req.protocol}`);
     const addr = req.secure ? `${req.protocol}://${req.hostname}/page2`: `${req.protocol}://${req.hostname}:${portNumber}/page2`;
     const variables = {
         address: addr,
@@ -71,7 +71,7 @@ app.get("/page2", (req, res) => {
 });
 
 app.get("/setFavorite", (req, res) => {
-    console.log(`protocol is ${req.protocol}`);
+    // console.log(`protocol is ${req.protocol}`);
     const addr = req.secure ? `${req.protocol}://${req.hostname}/processSetFavorite`: `${req.protocol}://${req.hostname}:${portNumber}/processSetFavorite`;
     const variables = {
         address: addr,
@@ -86,7 +86,7 @@ app.get("/bookNotFound", (req, res) => {
 });
 
 app.get("/retrieveFavorite", (req, res) => {
-    console.log(`protocol is ${req.protocol}`);
+    // console.log(`protocol is ${req.protocol}`);
     const addr = req.secure ? `${req.protocol}://${req.hostname}/processRetrieveFavorite`: `${req.protocol}://${req.hostname}:${portNumber}/processRetrieveFavorite`;
     const variables = {
         address: addr,
@@ -265,7 +265,7 @@ app.get("/removeAllFavorites", (request, response) => {
     // const variables = { 
     //     host: request?.hostname ?? "localhost",
     // };
-    console.log(`protocol is ${request.protocol}`);
+    // console.log(`protocol is ${request.protocol}`);
     const addr = request.secure ? `${request.protocol}://${request.hostname}/removeAllFavorites`: `${request.protocol}://${request.hostname}:${portNumber}/removeAllFavorites`;
     const variables = {
         address: addr,
