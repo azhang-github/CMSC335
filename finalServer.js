@@ -54,24 +54,27 @@ app.get("/home", (req, res) => {
 app.get("/listOfBooks", (req, res) => {
     // const protocol = req.protocol;
     console.log(`protocol is ${req.protocol}`);
+    const addr = req.secure ? `${req.protocol}://${req.hostname}/listOfBooks`: `${req.protocol}://${req.hostname}:${portNumber}/listOfBooks`;
     const variables = {
-        address: `${req.protocol}://${req.hostname}:${portNumber}/listOfBooks`,
+        address: addr,
     };
     res.render("listOfBooks", variables);
 });
 
 app.get("/page2", (req, res) => {
     console.log(`protocol is ${req.protocol}`);
+    const addr = req.secure ? `${req.protocol}://${req.hostname}/page2`: `${req.protocol}://${req.hostname}:${portNumber}/page2`;
     const variables = {
-        address: `${req.protocol}://${req.hostname}:${portNumber}/page2`,
+        address: addr,
     };
     res.render("page2", variables);
 });
 
 app.get("/setFavorite", (req, res) => {
     console.log(`protocol is ${req.protocol}`);
+    const addr = req.secure ? `${req.protocol}://${req.hostname}/processSetFavorite`: `${req.protocol}://${req.hostname}:${portNumber}/processSetFavorite`;
     const variables = {
-        address: `${req.protocol}://${req.hostname}/processSetFavorite`,
+        address: addr,
     };
     res.render("setFavorite", variables);
 });
@@ -84,8 +87,9 @@ app.get("/bookNotFound", (req, res) => {
 
 app.get("/retrieveFavorite", (req, res) => {
     console.log(`protocol is ${req.protocol}`);
+    const addr = req.secure ? `${req.protocol}://${req.hostname}/processRetrieveFavorite`: `${req.protocol}://${req.hostname}:${portNumber}/processRetrieveFavorite`;
     const variables = {
-        address: `${req.protocol}://${req.hostname}:${portNumber}/processRetrieveFavorite`,
+        address: addr,
     };
     res.render("retrieveFavorite", variables);
 });
@@ -262,8 +266,9 @@ app.get("/removeAllFavorites", (request, response) => {
     //     host: request?.hostname ?? "localhost",
     // };
     console.log(`protocol is ${request.protocol}`);
+    const addr = request.secure ? `${request.protocol}://${request.hostname}/removeAllFavorites`: `${request.protocol}://${request.hostname}:${portNumber}/removeAllFavorites`;
     const variables = {
-        address: `${request.protocol}://${request.hostname}:${portNumber}/removeAllFavorites`,
+        address: addr,
     };
     response.render("removeAllFavorites", variables);
 });
