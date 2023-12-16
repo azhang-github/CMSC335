@@ -13,6 +13,7 @@
 	<script>
         function confirmCreation() {
             // console.log("In confirmDeletion");
+			alert(`Alert`);
 
             let text = "Are you sure you want to submit your favorite selection?\n";
 			text += "Currently this application doesn't support multiple favorites.\n";
@@ -33,11 +34,12 @@
         <input type="submit" id="submit" class="button" name="submit" value="Get List">
 		</fieldset>
     </form>
+	
 	</div>
 	</div>
     
 	<hr>
-	<button class="button" onClick="location.href='/home';">&lt Home</button>
+	<button class="button" onClick="location.href='/home';">&lt Home <%- address %></button>
 	<!-- <a href="/home">HOME</a> -->
 </body>
 
