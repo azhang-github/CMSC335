@@ -71,7 +71,7 @@ app.get("/page2", (req, res) => {
 app.get("/setFavorite", (req, res) => {
     console.log(`protocol is ${req.protocol}`);
     const variables = {
-        address: `${req.protocol}://${req.hostname}:${portNumber}/processSetFavorite`,
+        address: `${req.protocol}://${req.hostname}/processSetFavorite`,
     };
     res.render("setFavorite", variables);
 });
@@ -94,6 +94,7 @@ app.get("/retrieveFavorite", (req, res) => {
 app.use(bodyParser.urlencoded({extended:false}));
 app.post("/listOfBooks", async (req, res) => {
     
+    // console.log()
     booksTable = "";
         
     fetch("https://openlibrary.org/search.json?q=" + req.body.book)
