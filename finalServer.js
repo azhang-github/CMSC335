@@ -52,6 +52,7 @@ app.get("/home", (req, res) => {
 
 app.get("/listOfBooks", (req, res) => {
     // const protocol = req.protocol;
+    console.log(`protocol is ${req.protocol}`);
     const variables = {
         address: `${req.protocol}://${req.hostname}:${portNumber}/listOfBooks`,
     };
@@ -59,6 +60,7 @@ app.get("/listOfBooks", (req, res) => {
 });
 
 app.get("/page2", (req, res) => {
+    console.log(`protocol is ${req.protocol}`);
     const variables = {
         address: `${req.protocol}://${req.hostname}:${portNumber}/page2`,
     };
@@ -66,6 +68,7 @@ app.get("/page2", (req, res) => {
 });
 
 app.get("/setFavorite", (req, res) => {
+    console.log(`protocol is ${req.protocol}`);
     const variables = {
         address: `${req.protocol}://${req.hostname}:${portNumber}/processSetFavorite`,
     };
@@ -79,6 +82,7 @@ app.get("/bookNotFound", (req, res) => {
 });
 
 app.get("/retrieveFavorite", (req, res) => {
+    console.log(`protocol is ${req.protocol}`);
     const variables = {
         address: `${req.protocol}://${req.hostname}:${portNumber}/processRetrieveFavorite`,
     };
@@ -255,6 +259,7 @@ app.get("/removeAllFavorites", (request, response) => {
     // const variables = { 
     //     host: request?.hostname ?? "localhost",
     // };
+    console.log(`protocol is ${req.protocol}`);
     const variables = {
         address: `${request.protocol}://${request.hostname}:${portNumber}/removeAllFavorites`,
     };
